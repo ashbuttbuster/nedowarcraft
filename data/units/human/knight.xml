@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<unit>
+    <property name="name" value="knight"/>
+    <property name="race" value="human"/>
+
+    <property name="attack_type" value="physical" />
+    <property name="attack_damage" value="5-10" />
+    <property name="attack_speed" value="0.8" />
+
+    <property name="defence_type" value="physical" />
+    <property name="defence_count" value="10" />
+
+    <property name="hp" value="100" />
+    
+    <property name="speed" value="30" />
+    
+    <property name="center_x" value="0.5" />
+    <property name="center_y" value="0.5" />
+
+    <property name="directions" value="4" />
+
+    <animation name="stand_270" loop="false" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="64" w="64" h="64" />
+    </animation>
+
+    <animation name="stand_90" loop="false" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="0" w="64" h="64" />
+    </animation>
+
+    <animation name="stand_0" loop="false" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="128" w="64" h="64" />
+    </animation>
+
+    <animation name="stand_180" loop="false" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="192" w="64" h="64" />
+    </animation>
+    
+    <animation name="walk_270" loop="true" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="64" w="64" h="64" />
+        <frame x="64" y="64" w="64" h="64" />
+        <frame x="0" y="64" w="64" h="64" />
+        <frame x="128" y="64" w="64" h="64" />
+    </animation>
+
+    <animation name="walk_90" loop="true" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="0" w="64" h="64" />
+        <frame x="64" y="0" w="64" h="64" />
+        <frame x="0" y="0" w="64" h="64" />
+        <frame x="128" y="0" w="64" h="64" />
+    </animation>
+
+    <animation name="walk_0" loop="true" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="128" w="64" h="64" />
+        <frame x="64" y="128" w="64" h="64" />
+    </animation>
+
+    <animation name="walk_180" loop="true" src="data/sprites/units/knight_blue.png">
+        <frame x="0" y="192" w="64" h="64" />
+        <frame x="64" y="192" w="64" h="64" />
+    </animation>
+
+</unit>
