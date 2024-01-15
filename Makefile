@@ -17,7 +17,9 @@ animation.o:
 	$(CPP) -c animation.cpp -o animation.o
 unit.o: animation.o camera.o
 	$(CPP) -c unit.cpp -o unit.o
-map.o: unit.o
+map.o: unit.o collision.o
 	$(CPP) -c map.cpp -o map.o
 camera.o:
 	$(CPP) -c camera.cpp -o camera.o
+collision.o:
+	$(CPP) -c collision.cpp -o collision.o

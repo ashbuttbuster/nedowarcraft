@@ -1,4 +1,5 @@
 #include "unit.hpp"
+#include <SFML/Graphics/Shape.hpp>
 
 Unit::Unit(std::string path, sf::Vector2f pos, int angle) {
     std::vector< sf::Rect<int> > frames;
@@ -109,8 +110,8 @@ void Unit::update( float d ) {
 }
 
 void Unit::render( sf::RenderWindow* win, Camera* camera ) {
-    sf::RectangleShape selectionFrame((sf::Vector2f)this->size());
-    
+    sf::RectangleShape selectionFrame((sf::Vector2f)this->size() * camera->getScale() );
+
     selectionFrame.setPosition((this->position + camera->getPosition()) * camera->getScale() );
     selectionFrame.setFillColor(sf::Color::Transparent);
     selectionFrame.setOutlineColor(sf::Color::Green);

@@ -70,9 +70,16 @@ void Game::pollEvents() {
 
 
     if ( this->event.type == sf::Event::MouseButtonReleased ) {
+        sf::Vector2f mouse( 
+            this->event.mouseButton.x,
+            this->event.mouseButton.y 
+        );
+
         if ( this->event.mouseButton.button == sf::Mouse::Left ) {
+            this->test.select( mouse, this->camera );
         }
         else if ( this->event.mouseButton.button == sf::Mouse::Right ) {
+            this->test.action( mouse, this->camera );
         }
     }
 

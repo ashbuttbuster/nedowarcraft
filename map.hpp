@@ -1,4 +1,5 @@
 #include "unit.hpp"
+#include "collision.hpp"
 
 #include <SFML/Graphics.hpp>
 
@@ -35,7 +36,11 @@ public:
     Unit addUnit( std::string name, sf::Vector2f pos, int angle );
     void removeUnit( std::string id );
     
+    void action( sf::Vector2f point, Camera* camera );
+
     void update( float d );
+
+    void select( sf::Vector2f point, Camera* camera );
 
     void render( sf::RenderWindow* win, Camera* camera );
 };

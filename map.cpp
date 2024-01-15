@@ -41,9 +41,32 @@ void Map::removeUnit( std::string id ) {
     this->units.erase(id);
 }
 
+void Map::action( sf::Vector2f point, Camera* camera ) {
+    for ( auto it = this->units.begin(); it != this->units.end(); it++ ) {
+        if ( it->second.hasSelected() )
+            it->second.moveTo( point / camera->getScale() - camera->getPosition() );
+    }
+}
+
 void Map::update( float d ) {
-    for( auto it = this->units.begin(); it != this->units.end(); it++)
+    for( auto it = this->units.begin(); it != this->units.end(); it++ )
         it->second.update( d );
+}
+
+void Map::select( sf::Vector2f point, Camera* camera ) {
+    for( auto it = this->units.begin(); it != this->units.end(); it++ ) {
+        sf::FloatRect rect(
+            ( it->second.pos().x + camera->getPosition().x ) * camera->getScale(),
+            ( it->second.pos().y + camera->getPosition().y ) * camera->getScale(),
+            it->second.size().x * camera->getScale(),
+            it->second.size().y * camera->getScale()
+        );
+
+        if ( Collision::point2rect( point, rect ))
+            it->second.select();
+        else
+            it->second.deselect();
+    }
 }
 
 void Map::render( sf::RenderWindow* win, Camera* camera ) {
