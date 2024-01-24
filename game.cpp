@@ -4,7 +4,7 @@
 #include <iostream>
 
 Game::Game() {
-    this->win = new sf::RenderWindow(sf::VideoMode(1024,768),"NedoWarCraft");
+    this->win = new sf::RenderWindow(sf::VideoMode(1024,768),"NedoWarCraft", sf::Style::Close | sf::Style::Titlebar );
     
     std::map< std::string, std::string > params;
     
